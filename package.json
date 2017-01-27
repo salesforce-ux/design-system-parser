@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "description": "Parse CSS comments into a data structure",
   "main": "./dist/index.js",
+  "files": [
+    ".dist/**/*"
+  ],
   "scripts": {
     "test": "jest",
-    "lint": "standard"
+    "lint": "standard",
+    "prepublish": "gulp"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
