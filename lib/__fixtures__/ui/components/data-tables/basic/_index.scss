@@ -1,0 +1,211 @@
+/**
+ * To initialize a data table, apply the `slds-table` class to the
+ * `table` element. This class creates a `table`
+ * with formatted cells and allows you to use data table utilities.
+ *
+ * ##Accessibility##
+ * To create an accessible table, the top row of column headers (`th`)
+ * are placed in a `thead`. Each one receives the `scope="col"`
+ * attribute. The first non-actionable (meaning that doesn't contain a checkbox
+ * or menu) column in each row should be marked as a `th` with a
+ * `scope="row"` attribute.
+ *
+ * @summary Data tables are an enhanced version of an HTML table and are used to display tabular data.
+ *
+ * @name data-tables
+ * @base
+ * @selector .slds-table
+ * @category view
+ * @type data-display, data-entry, navigation
+ * @role grid
+ * @support dev-ready
+ * @layout adaptive
+ *
+ */
+
+/**
+ * Initializes data table
+ *
+ * @name basic
+ * @selector .slds-table
+ * @restrict table
+ * @variant
+ */
+.slds-table {
+    background-color: $color-background-alt;
+
+    th,
+    td {
+        padding: $table-spacing-x-small;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    th {
+        font-weight: $font-weight-regular;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    /**
+     * Selected Table Row + Hover
+     *
+     * @selector .slds-no-row-hover
+     * @restrict .slds-table
+     * @modifier
+     */
+    &:not(.slds-no-row-hover) tbody tr:hover {
+
+        > td,
+        > th {
+            background-color: $color-background-row-hover;
+        }
+    }
+
+    /**
+     * Add left and right padding to the first and last cells of a table
+     *
+     * @selector .slds-table--cell-buffer
+     * @restrict .slds-table
+     * @modifier
+     */
+    .slds-table--cell-buffer {
+        // First cells in a row
+        tr > th:first-child,
+        tr > td:first-child {
+            padding-left: $spacing-large;
+        }
+        // Last cells in a row
+        tr > th:last-child,
+        tr > td:last-child {
+            padding-right: $spacing-large;
+        }
+    }
+
+    /**
+     * Use to add a left padding buffer to cells
+     *
+     * @selector .slds-cell-buffer--left
+     * @restrict .slds-table th, .slds-table td
+     * @modifier
+     */
+    .slds-cell-buffer--left {
+        padding-left: $spacing-large;
+    }
+
+    /**
+     * Use to add a right padding buffer to cells
+     *
+     * @selector .slds-cell-buffer--right
+     * @restrict .slds-table th, .slds-table td
+     * @modifier
+     */
+    .slds-cell-buffer--right {
+        padding-right: $spacing-large;
+    }
+
+    /**
+     * By default, nowrap is applied
+     *
+     * @selector .slds-cell-wrap
+     * @restrict .slds-table th, .slds-table td
+     * @modifier
+     */
+    .slds-cell-wrap {
+        white-space: normal;
+    }
+}
+
+/**
+ * Focus state on a cell
+ *
+ * @selector [role="gridcell"]:focus, [role="gridcell"].slds-has-focus
+ * @restrict .slds-table th, .slds-table td
+ * @modifier
+ */
+[role="gridcell"]:focus {
+  outline: 0;
+}
+
+[role="gridcell"]:focus,
+[role="gridcell"].slds-has-focus {
+  box-shadow: $color-border-selection 0 0 0 1px inset;
+}
+
+[role="gridcell"]:active {
+  box-shadow: initial;
+}
+
+/**
+ * Add vertical borders to a table
+ *
+ * @selector .slds-table--bordered
+ * @restrict .slds-table
+ * @modifier
+ */
+.slds-table--bordered {
+    border-collapse: separate;
+    // scss-lint:disable SelectorDepth
+    border: {
+        top: $border-width-thin solid $color-border;
+        bottom: $border-width-thin solid $color-border;
+    }
+
+    // More than one row in thead
+    thead > tr + tr > th {
+        border-top: $border-width-thin solid $color-border;
+    }
+
+    // Cells
+    tbody td,
+    tbody th {
+        border-top: $border-width-thin solid $color-border;
+    }
+
+    // Default Table Row Hover
+    //
+    // Checks if .no-row-hover is applied to parent table
+    // Applies hovers to only <th> and <td> within <tbody>
+    // Also checks that the <th> and <td> do not have the class .is-selected
+    // This retains the selected state when a row is hovered
+    //
+    // Box shadow used to eliminate jumpiness on hover
+    &:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-is-selected),
+    &:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-is-selected) {
+        box-shadow: $color-border 0 ($border-width-thin * -1) 0 inset,
+                    $color-border 0 ($border-width-thin) 0 inset;
+    }
+}
+
+/**
+ * Add column borders
+ *
+ * @selector .slds-table--col-bordered
+ * @restrict .slds-table
+ * @modifier
+ */
+.slds-table--col-bordered {
+
+    td + td,
+    th + th,
+    th + td,
+    td + th {
+        border-left: $border-width-thin solid $color-border;
+    }
+}
+/**
+ * Add alternating strips to rows
+ *
+ * @selector .slds-table--striped
+ * @restrict .slds-table
+ * @modifier
+ */
+.slds-table--striped {
+    // scss-lint:disable SelectorDepth
+    tbody tr:nth-of-type(even) > td,
+    tbody tr:nth-of-type(even) > th {
+        background-color: $color-background-row-hover;
+    }
+}

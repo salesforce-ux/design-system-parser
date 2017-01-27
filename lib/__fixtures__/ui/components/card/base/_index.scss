@@ -1,0 +1,148 @@
+/**
+ * To initialize a card, apply the `.slds-card` class to a containing `<article>`.
+ * A card is made up of three sections, a header, a body, and a footer.
+ * The card header will get the `.slds-card__header` class.
+ * The card body will get the `.slds-card__body` class. The card footer will
+ * get the `.slds-card__footer` class.
+ *
+ * @summary Cards are used to apply a container around a related grouping of information.
+ *
+ * @name card
+ * @base
+ * @selector .slds-card
+ * @category view
+ * @type data-display, layout
+ * @role presentation
+ * @support dev-ready
+ * @layout responsive
+ */
+
+/**
+ * Initializes card. In addition, the slds-card class is used for layout purposes
+ * when a card has an adjacent card, those proceeding the initial will provide margin
+ * to give the cards spacing between each other.
+ *
+ * @name card
+ * @selector .slds-card
+ * @restrict article
+ * @variant
+ */
+ .slds-card {
+    padding: 0;
+    background: $card-color-background;
+    border: $border-width-thin solid $color-border;
+    border-radius: $border-radius-medium;
+    background-clip: padding-box;
+
+    // Adds spacing between cards
+    + .slds-card {
+        margin-top: $card-spacing-medium;
+    }
+
+    /**
+     * Initializes card header
+     *
+     * @selector .slds-card__header
+     * @restrict .slds-card header
+     */
+    &__header {
+        padding-top: $card-spacing-small;
+        margin-bottom: $card-spacing-small;
+    }
+
+    /**
+     * Initializes card body
+     *
+     * @selector .slds-card__body
+     * @restrict .slds-card div
+     */
+    &__body {
+        margin-bottom: $card-spacing-small;
+    }
+
+    /**
+     * Initializes card footer
+     *
+     * @selector .slds-card__footer
+     * @restrict .slds-card footer
+     */
+    &__footer {
+        margin-top: $card-spacing-small;
+        padding-bottom: $card-spacing-small;
+        text-align: right;
+    }
+
+    /**
+     * @name empty
+     * @selector .slds-card__body:empty, .slds-card__footer:empty,
+     * @modifier
+     */
+    &__body:empty,
+    &__footer:empty {
+        display: none;
+    }
+
+    &__header,
+    &__footer,
+    &__body--inner {
+        padding-left: $card-spacing-small;
+        padding-right: $card-spacing-small;
+
+        @include mq-large-min {
+            padding-left: $card-spacing-large;
+            padding-right: $card-spacing-large;
+        }
+    }
+
+    /**
+     * Modifies styles for card in a narrow column
+     *
+     * @name card-narrow
+     * @selector .slds-card--narrow
+     * @restrict .slds-card
+     * @modifier
+     */
+    &--narrow {
+
+        .slds-card__header {
+            padding-top: $card-spacing-small;
+            margin-bottom: $card-spacing-small;
+
+            @include mq-large-min {
+                padding-top: $card-spacing-large;
+                margin-bottom: $card-spacing-large;
+            }
+        }
+
+        .slds-card__footer {
+            padding-bottom: $card-spacing-small;
+
+            @include mq-large-min {
+                padding-bottom: $card-spacing-medium;
+            }
+        }
+    }
+
+    /**
+     * @selector .slds-card--empty
+     * @restrict .slds-card
+     * @modifier
+     * @deprecated
+     */
+    @include deprecate('4.0.0', 'Use a text-align--center utility class instead') {
+        .slds-card--empty .slds-card__body {
+            text-align: center;
+        }
+    }
+}
+
+/**
+ * Use class if card consumes any form of a tile
+ *
+ * @selector .slds-card__tile
+ * @restrict .slds-tile
+ * @modifier
+ */
+.slds-card__tile {
+    margin-top: $spacing-x-small;
+}

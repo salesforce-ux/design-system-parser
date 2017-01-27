@@ -1,0 +1,207 @@
+/**
+ * Set table to use fixed layout for width and truncation purposes
+ *
+ * @name advanced
+ * @selector .slds-table--fixed-layout
+ * @restrict .slds-table
+ * @variant
+ */
+.slds-table--fixed-layout {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+
+    thead {
+        background-color: green;
+
+        th {
+          background-color: red;
+            padding: 0; // Due to HTML structure, need to reset the padding on all th elements in thead
+        }
+    }
+
+    // Tap into hardware acceleration for performance of large amounts of rows
+    tbody {
+        transform: translateZ(0);
+    }
+
+    .slds-cell-shrink {
+        width: $square-icon-large-boundary;
+
+        &:nth-child(n) {
+            padding: {
+                left: 0;
+                right: 0;
+            }
+        }
+
+        &:first-child {
+            text-align: right;
+            padding-right: $spacing-x-small;
+        }
+
+        &:last-child {
+            text-align: left;
+            padding-left: $spacing-x-small;
+        }
+    }
+}
+
+/**
+ * If the column is sortable than lets handle the actionable
+ * region of the <th> cell
+ *
+ * @selector .slds-is-sortable
+ * @restrict .slds-table--fixed-layout th
+ */
+.slds-is-sortable {
+
+    .slds-th__action:hover,
+    .slds-th__action:focus,
+    &.slds-has-focus .slds-th__action,
+    &.slds-has-focus .slds-th__action:hover,
+    &.slds-has-focus .slds-th__action:focus {
+        background-color: $color-background-row-hover;
+        color: $color-text-link;
+
+        .slds-icon {
+            display: inline-block;
+            fill: $color-text-link;
+        }
+    }
+}
+
+/**
+ * Actionable area inside th
+ *
+ * @selector .slds-th__action
+ * @restrict .slds-table--fixed-layout th div a
+ */
+
+.slds-th__action {
+    display: flex;
+    padding: $spacing-x-small;
+    height: 2rem; // Keep in sync with the padding of .slds-table--header-fixed_container
+
+    &:focus,
+    &:hover {
+        outline: 0;
+        background-color: $color-background-row-hover;
+    }
+
+    /**
+     * Allows for alignment of form element, such as a checkbox
+     *
+     * @selector .slds-th__action--form
+     * @restrict .slds-table--fixed-layout th a
+     * @modifier
+     */
+    &--form {
+        display: inline-flex; // Allows for alignment of form element, such as a checkbox
+    }
+}
+
+/**
+ * Icon inside sortable th
+ *
+ * @selector .slds-is-sortable__icon
+ * @restrict .slds-is-sortable .slds-icon
+ */
+.slds-is-sortable__icon {
+  @include square($square-icon-small-content);
+  margin-left: $spacing-xx-small;
+  display: none;
+}
+
+/**
+ * Active state of sorted column
+ *
+ * @selector .slds-is-sorted
+ * @restrict .slds-table--fixed-layout th
+ */
+.slds-is-sorted {
+
+    .slds-is-sortable__icon {
+        display: inline-block;
+    }
+
+    /**
+     * Change direction of arrow
+     *
+     * @name sorted-ascending
+     * @selector .slds-is-sorted--asc
+     * @restrict .slds-is-sorted
+     * @modifier
+     */
+    &--asc .slds-is-sortable__icon {
+        transform: rotate(180deg);
+    }
+}
+
+/**
+ * Provide an indicator that resizing is available
+ *
+ * @selector .slds-is-resizable
+ * @restrict .slds-table--fixed-layout th
+ */
+.slds-is-resizable {
+    padding: 0; // Reset padding so actionable link bleeds to edge
+
+    .slds-th__action:hover,
+    .slds-th__action:focus {
+        box-shadow: $color-border-separator-alt ($spacing-xx-small * -1) 0 0 inset;
+    }
+}
+
+/**
+ * Resizable handle
+ *
+ * @selector .slds-resizable
+ * @restrict .slds-is-resizable div
+ */
+.slds-resizable {
+    max-width: 100%;
+
+    /**
+     * Grab handle to resize column
+     *
+     * @selector .slds-resizable__handle
+     * @restrict .slds-resizable span
+     */
+    &__handle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $spacing-xx-small;
+        height: 100%;
+        background: $color-background-button-brand;
+        display: block;
+        cursor: col-resize;
+        opacity: 0;
+        z-index: $z-index-popup;
+
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: 1;
+        }
+    }
+
+    /**
+     * Grab handle divider indicator when resizing column
+     *
+     * @selector .slds-resizable__divider
+     * @restrict .slds-resizable__handle span
+     */
+    &__divider {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        width: 1px;
+        background: $color-background-button-brand;
+    }
+    // No idea what this does
+    &__input:focus ~ .slds-resizable__handle {
+        opacity: 1;
+    }
+}
