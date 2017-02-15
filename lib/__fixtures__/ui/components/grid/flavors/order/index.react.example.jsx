@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2017, salesforce.com, inc. All rights reserved.
+Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -9,29 +9,31 @@ Neither the name of salesforce.com, inc. nor the names of its contributors may b
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-const parseComments = require('./comments')
+import React from 'react';
 
-const createComment = require('./comment')
-const createRepository = require('./repository')
 
-module.exports = s => {
-  const comments = parseComments(s)
-  const repository = createRepository(comments)
-  const {
-    components,
-    component,
-    utilities,
-    utility,
-    findVariant,
-    findModifier
-  } = createComment(repository)
-  return {
-    comments,
-    components,
-    utility,
-    utilities,
-    component,
-    findVariant,
-    findModifier
-  }
-}
+export const preview = (
+<div className="demo-only demo-container">
+  <div className="slds-grid slds-wrap">
+    <div className="slds-col slds-p-horizontal--small slds-order--2 slds-medium-order--1 slds-large-order--3">
+      <div className="slds-box slds-box--small slds-theme--shade slds-text-align--center">1</div>
+    </div>
+    <div className="slds-col slds-p-horizontal--small slds-order--3 slds-medium-order--2 slds-large-order--2">
+      <div className="slds-box slds-box--small slds-theme--shade slds-text-align--center">2</div>
+    </div>
+    <div className="slds-col slds-p-horizontal--small slds-order--1 slds-medium-order--3 slds-large-order--1">
+      <div className="slds-box slds-box--small slds-theme--shade slds-text-align--center">3</div>
+    </div>
+  </div>
+</div>
+);
+
+export const code = (
+<div className="demo-only demo-container">
+  <div className="slds-grid">
+    <div className="slds-order--2 slds-medium-order--1 slds-large-order--3">1</div>
+    <div className="slds-order--3 slds-medium-order--2 slds-large-order--2">2</div>
+    <div className="slds-order--1 slds-medium-order--3 slds-large-order--1">3</div>
+  </div>
+</div>
+);
