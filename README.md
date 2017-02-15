@@ -42,6 +42,6 @@ We start by finding the first concrete variant. This is because there is no sele
 
 
 #### Utilities
-Utilities work top-down looking for selectors, not restricts. The reason is restrict should always be `*` (or `.myscope > *`) for a utility. We use the same matching technique with `fancy`, but this time we flip the html generation around: the candidates generate html and the abstract utility's selector is used to match.
+Utilities work top-down looking for selectors, not restricts. The reason is restrict should always be `*` (or `.myscope > *`) for a utility. We use the same matching technique we used with `fancy`, but this time we use `utils` and also flip the html generation around: the candidates generate html and the abstract utility's selector is used to match.
 
 
