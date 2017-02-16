@@ -1,6 +1,6 @@
 {
   "name": "@salesforce-ux/design-system-parser",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Parse CSS comments into a data structure",
   "main": "./.dist/index.js",
   "files": [
