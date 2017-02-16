@@ -1,5 +1,7 @@
 # Design System Parser
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/salesforce-ux/design-system-parser.svg?token=087f4daf1f9be43c910f3ec67b325214018ff8adc8367d4e28b4daada8d3d962)](https://greenkeeper.io/)
+
 <img src="https://portioncontrol.herokuapp.com/pie.png?size=250x250&performance=30&readabilty=70" alt="performance=30, readability=70" width=125 height=125 />
 
 ## Installation
