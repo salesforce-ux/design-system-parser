@@ -1,11 +1,12 @@
 {
   "name": "@salesforce-ux/design-system-parser",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Parse CSS comments into a data structure",
   "main": "./.dist/index.js",
   "files": [
     ".dist/**/*"
   ],
+  "license": "SEE LICENSE IN README.md",
   "scripts": {
     "test": "jest",
     "lint": "standard",
