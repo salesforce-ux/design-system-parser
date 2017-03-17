@@ -105,7 +105,7 @@
  * Icon inside sortable th
  *
  * @selector .slds-is-sortable__icon
- * @restrict .slds-is-sortable .slds-icon
+ * @restrict .slds-table--fixed-layout th.slds-is-sortable
  */
 .slds-is-sortable__icon {
   @include square($square-icon-small-content);
