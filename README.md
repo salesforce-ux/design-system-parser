@@ -1,10 +1,10 @@
 # Design System Parser
 
-<img src="https://portioncontrol.herokuapp.com/pie.png?size=250x250&performance=30&readabilty=70" alt="performance=30, readability=70" width=125 height=125 />
+Parses CSS comments into a tree data structure using assertion selectors.
 
 ## Installation
 
-`npm install`
+`npm install @salesforce-ux/design-system-parser`
 
 ## Api
 
