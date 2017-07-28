@@ -1,0 +1,38 @@
+exports[`test ignores annotations inside a code fence 1`] = `
+Array [
+  Object {
+    "annotations": Object {
+      "a": true,
+      "b": true,
+    },
+    "description": "This comment contains a code fence
+\`\`\`scss
+@media () {}
+\`\`\`",
+  },
+]
+`;
+
+exports[`test parses description and annotations (multi) 1`] = `
+Array [
+  Object {
+    "annotations": Object {
+      "a": "hello",
+      "b": "world",
+    },
+    "description": "This is a multi-line
+description",
+  },
+]
+`;
+
+exports[`test parses description and annotations 1`] = `
+Array [
+  Object {
+    "annotations": Object {
+      "world": true,
+    },
+    "description": "Hello",
+  },
+]
+`;
