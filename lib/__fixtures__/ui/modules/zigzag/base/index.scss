@@ -1,0 +1,37 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+@import '../../../init';
+@import '../mixins/index';
+
+/**
+ * # The zigzag
+ *
+ * Something something
+ *
+ * @summary This paints a line
+ * @name base
+ * @selector .dsm-zigzag
+ * @restrict div
+ * @variant
+ */
+.dsm-zigzag {
+  @include button-reset;
+  @include button-normalize;
+}
+
+/**
+ * @selector .dsm-zigzag__child
+ * @restrict .dsm-zigzag div
+ */
+.dsm-zigzag__child {
+  background: red;
+}
+
+/**
+ * @selector .dsm-zigzag__child__child
+ * @restrict .dsm-zigzag__child div
+ */
+.dsm-zigzag__child__child {
+  background: red;
+}
