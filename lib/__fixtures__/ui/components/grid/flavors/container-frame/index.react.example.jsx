@@ -13,7 +13,7 @@ import React from 'react'
 
 export const preview = (
   <div className='demo-only demo-container'>
-    <div className='slds-grid slds-grid--frame slds-theme--shade' style={{height: '250px', margin: '-1rem'}}>
+    <div className='slds-grid slds-grid--frame slds-theme--shade' style={{ height: '250px', margin: '-1rem' }}>
       <div className='slds-col slds-grid slds-grid--align-center slds-grid--vertical-align-center'><div>App Content</div></div>
     </div>
   </div>

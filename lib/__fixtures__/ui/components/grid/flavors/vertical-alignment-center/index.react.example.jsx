@@ -13,7 +13,7 @@ import React from 'react'
 
 export const preview = (
   <div className='demo-only demo-container'>
-    <div className='slds-grid slds-grid--vertical-align-center slds-grid--pull-padded' style={{height: '250px'}}>
+    <div className='slds-grid slds-grid--vertical-align-center slds-grid--pull-padded' style={{ height: '250px' }}>
       <div className='slds-col--padded'>
         <div className='slds-box slds-box--small slds-theme--shade slds-text-align--center'>Content determines the width unless otherwise set</div>
       </div>

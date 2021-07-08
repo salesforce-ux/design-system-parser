@@ -13,7 +13,7 @@ import React from 'react'
 
 export const preview = (
   <div className='demo-only demo-container'>
-    <div className='slds-grid slds-grid--align-spread' style={{height: '250px'}}>
+    <div className='slds-grid slds-grid--align-spread' style={{ height: '250px' }}>
       <div className='slds-align-top'><div className='slds-box slds-box--small slds-theme--shade'>Top Align</div></div>
       <div className='slds-align-middle'><div className='slds-box slds-box--small slds-theme--shade'>Middle Align</div></div>
       <div className='slds-align-bottom'><div className='slds-box slds-box--small slds-theme--shade'>Bottom Align</div></div>

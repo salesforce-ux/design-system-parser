@@ -13,7 +13,7 @@ import React from 'react'
 
 export const preview = (
   <div className='demo-only demo-container'>
-    <div className='slds-grid slds-grid--vertical-stretch' style={{height: '250px'}}>
+    <div className='slds-grid slds-grid--vertical-stretch' style={{ height: '250px' }}>
       <div className='slds-box slds-box--small slds-theme--shade slds-m-right--large'>Content determines the width unless otherwise set</div>
       <div className='slds-box slds-box--small slds-theme--shade slds-m-right--large'>1</div>
       <div className='slds-box slds-box--small slds-theme--shade slds-m-right--large'>2</div>
