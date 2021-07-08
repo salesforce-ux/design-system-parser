@@ -10,9 +10,15 @@ ignore:
     - babili > babel-cli > chokidar > glob-parent:
         reason: None given
         expires: '2021-08-07T23:04:11.299Z'
+      gulp > glob-watcher > chokidar > glob-parent:
+        reason: Gulp requires patching
+        expires: '2021-08-07T23:40:13.571Z'
     - babili > babel-cli > chokidar > anymatch > micromatch > parse-glob > glob-base > glob-parent:
         reason: None given
         expires: '2021-08-07T23:04:11.299Z'
+      gulp > vinyl-fs > glob-stream > glob-parent:
+        reason: Gulp requires patching
+        expires: '2021-08-07T23:40:13.571Z'
   'npm:braces:20180219':
     - babili > babel-cli > chokidar > anymatch > micromatch > braces:
         reason: None given
