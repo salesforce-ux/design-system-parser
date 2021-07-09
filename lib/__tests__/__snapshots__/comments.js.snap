@@ -1,38 +1,40 @@
-exports[`test ignores annotations inside a code fence 1`] = `
-Array [
-  Object {
-    "annotations": Object {
-      "a": true,
-      "b": true,
-    },
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ignores annotations inside a code fence 1`] = `
+Immutable.List [
+  Immutable.Map {
     "description": "This comment contains a code fence
 \`\`\`scss
 @media () {}
 \`\`\`",
+    "annotations": Immutable.Map {
+      "a": true,
+      "b": true,
+    },
   },
 ]
 `;
 
-exports[`test parses description and annotations (multi) 1`] = `
-Array [
-  Object {
-    "annotations": Object {
+exports[`parses description and annotations (multi) 1`] = `
+Immutable.List [
+  Immutable.Map {
+    "description": "This is a multi-line
+description",
+    "annotations": Immutable.Map {
       "a": "hello",
       "b": "world",
     },
-    "description": "This is a multi-line
-description",
   },
 ]
 `;
 
-exports[`test parses description and annotations 1`] = `
-Array [
-  Object {
-    "annotations": Object {
+exports[`parses description and annotations 1`] = `
+Immutable.List [
+  Immutable.Map {
+    "description": "Hello",
+    "annotations": Immutable.Map {
       "world": true,
     },
-    "description": "Hello",
   },
 ]
 `;

@@ -9,24 +9,24 @@ Neither the name of salesforce.com, inc. nor the names of its contributors may b
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import React from 'react';
+import React from 'react'
 
 export const preview = (
-<div className="demo-only demo-container">
-  <div className="slds-grid slds-grid--align-spread" style={{height: '250px'}}>
-    <div className="slds-align-top"><div className="slds-box slds-box--small slds-theme--shade">Top Align</div></div>
-    <div className="slds-align-middle"><div className="slds-box slds-box--small slds-theme--shade">Middle Align</div></div>
-    <div className="slds-align-bottom"><div className="slds-box slds-box--small slds-theme--shade">Bottom Align</div></div>
+  <div className='demo-only demo-container'>
+    <div className='slds-grid slds-grid--align-spread' style={{ height: '250px' }}>
+      <div className='slds-align-top'><div className='slds-box slds-box--small slds-theme--shade'>Top Align</div></div>
+      <div className='slds-align-middle'><div className='slds-box slds-box--small slds-theme--shade'>Middle Align</div></div>
+      <div className='slds-align-bottom'><div className='slds-box slds-box--small slds-theme--shade'>Bottom Align</div></div>
+    </div>
   </div>
-</div>
-);
+)
 
 export const code = (
-<div className="demo-only demo-container">
-  <div className="slds-grid">
-    <div className="slds-align-top">Top Align</div>
-    <div className="slds-align-middle">Middle Align</div>
-    <div className="slds-align-bottom">Bottom Align</div>
+  <div className='demo-only demo-container'>
+    <div className='slds-grid'>
+      <div className='slds-align-top'>Top Align</div>
+      <div className='slds-align-middle'>Middle Align</div>
+      <div className='slds-align-bottom'>Bottom Align</div>
+    </div>
   </div>
-</div>
-);
+)
