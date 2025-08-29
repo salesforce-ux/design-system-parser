@@ -21,7 +21,7 @@
     "immutable": "^3.8.1",
     "immutable-ext": "^1.0.5",
     "lodash": "^4.17.2",
-    "snyk": "^1.657.0"
+    "snyk": "^1.1298.3"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
