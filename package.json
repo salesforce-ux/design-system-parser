@@ -4,7 +4,10 @@
   "description": "Parse CSS comments into a data structure",
   "main": "./.dist/index.js",
   "files": [
-    ".dist/**/*"
+    ".dist/**/*",
+    "LICENSE.txt",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "license": "SEE LICENSE IN README.md",
   "scripts": {
